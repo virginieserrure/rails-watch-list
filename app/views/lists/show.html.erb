@@ -1,1 +1,13 @@
 <h1><%= @list.name %></h1>
+
+<ul>
+  <% @list.movies.each do |movie| %>
+  <li><%= movie.title %></li>
+    <%=  movie.overview %>
+    <%= movie.poster_url %>
+    <%= movie.rating %>
+  <% end %>
+</ul>
+
+<%= link_to "return all lists", lists_path, class: 'btn btn-primary' %>
+<%= link_to "return all lists", new_list_bookmark_path, class: 'btn btn-primary' %>
